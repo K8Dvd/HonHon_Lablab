@@ -559,7 +559,7 @@ function App() {
 
         <div className={`winner-ticket ${jackpot ? "winner-active" : ""}`}>
           <div className="ticket-left">
-            <div className="ticket-number">HONHON</div>
+            <div className="ticket-number">HON</div>
             <span>LOVE LOTTO</span>
           </div>
 
