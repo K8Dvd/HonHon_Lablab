@@ -498,7 +498,7 @@ function App() {
 
       <section className="hero-section">
         <div className="top-stamp">
-          <span>HONHON</span>
+          <span>HON</span>
           <span>LABLAB</span>
           <span>EST. {couple.anniversaryYear}</span>
         </div>
