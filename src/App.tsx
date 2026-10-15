@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowDown,
@@ -15,7 +16,6 @@ import {
 
 import {
   couple,
-  coupleVideo,
   ending,
   hero,
   letter,
@@ -320,12 +320,7 @@ function App() {
   const reasonsRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    // Create the YouTube player in a DOM node that lives OUTSIDE React's
-    // render tree (appended directly to <body>). If we let React manage
-    // this node instead, the YouTube API silently swaps it for an <iframe>
-    // behind React's back, and the next time React re-renders (like during
-    // the roll animation) it can crash the whole app because the DOM no
-    // longer matches what React expects.
+    // Keep the YouTube player outside React's render tree.
     const container = document.createElement("div");
     container.className = "hidden-yt-player";
     document.body.appendChild(container);
@@ -498,13 +493,13 @@ function App() {
         aria-label={musicPlaying ? "Pause our song" : "Play our song"}
       >
         {musicPlaying ? <Pause size={16} /> : <Play size={16} />}
-        <span>{musicPlaying ? "PLAYING" : "PLAY OUR SONG"}</span>
+        <span>{musicPlaying ? "PLAYING" : "HonHon "}</span>
       </button>
 
       <section className="hero-section">
         <div className="top-stamp">
-          <span>S002</span>
-          <span>LUCKY US</span>
+          <span>HONHON</span>
+          <span>LABLAB</span>
           <span>EST. {couple.anniversaryYear}</span>
         </div>
 
@@ -564,7 +559,7 @@ function App() {
 
         <div className={`winner-ticket ${jackpot ? "winner-active" : ""}`}>
           <div className="ticket-left">
-            <div className="ticket-number">S002</div>
+            <div className="ticket-number">HONHON</div>
             <span>LOVE LOTTO</span>
           </div>
 
@@ -710,27 +705,6 @@ function App() {
         )}
       </section>
 
-      <section className="video-section">
-        <div className="section-heading centered">
-          <div>
-            <p className="eyebrow">ONE MORE MEMORY</p>
-            <h2>Our little video.</h2>
-          </div>
-
-          <p>
-            Press play.
-            <br />
-            This one's my favorite.
-          </p>
-        </div>
-
-        <div className="video-frame">
-          <video src={coupleVideo.src} controls playsInline />
-        </div>
-
-        <p className="video-caption">{coupleVideo.caption}</p>
-      </section>
-
       <section className="scratch-section">
         <div className="section-heading centered">
           <div>
@@ -818,7 +792,7 @@ function App() {
         </div>
 
         <footer>
-          <span>S002 · LUCKY US</span>
+          <span>HONHON · LUCKY US</span>
           <span>MADE WITH LOVE</span>
         </footer>
       </section>
